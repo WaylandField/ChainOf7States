@@ -1,0 +1,147 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getCurrentSeason",
+      "outputs": [
+        {
+          "internalType": "enum SeasonOracle.Season",
+          "name": "current",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timeInSeason",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timeToNext",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getSeasonDetails",
+      "outputs": [
+        {
+          "internalType": "enum SeasonOracle.Season",
+          "name": "currentSeason",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "seasonName",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "seasonNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "startTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timeElapsed",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timeRemaining",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "updateSeason",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "forceNextSeason",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newDuration",
+          "type": "uint256"
+        }
+      ],
+      "name": "setSeasonDuration",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_isActive",
+          "type": "bool"
+        }
+      ],
+      "name": "setOracleActive",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "enum SeasonOracle.Season",
+          "name": "newSeason",
+          "type": "uint8"
+        },
+        {
+          "indexed": true,
+          "internalType": "enum SeasonOracle.Season",
+          "name": "previousSeason",
+          "type": "uint8"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "seasonNumber",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "changeTime",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "seasonName",
+          "type": "string"
+        }
+      ],
+      "name": "SeasonChanged",
+      "type": "event"
+    }
+  ]
+}
