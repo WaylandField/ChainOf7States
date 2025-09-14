@@ -9,7 +9,7 @@ const buildStateEconomySubmodule = (
 ) =>
     buildModule(`StateEconomy_${stateId}`, (m) => {
         const deployer = m.getAccount(0);
-        const stateDao = m.contract("StateDAO", [[deployer], 10, 50]);
+        const stateDao = m.contract("StateDAO", [[deployer], 30, 50]);
         const nationalCurrency = m.contract("NationalCurrency", [name, symbol]);
         const centralBank = m.contract("CentralBank", [stateDao, nationalCurrency, goldAddress]);
 
