@@ -1,4 +1,11 @@
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
+import { keccak256, toUtf8Bytes } from "ethers";
+
+
+function generateSalt(stateId: string, contractName: string): string {
+    const saltString = `${stateId}_${contractName}_v1`;
+    return keccak256(toUtf8Bytes(saltString));
+}
 
 // 子模块工厂：为单个国家部署所需合约，并以扁平键名返回
 const buildStateEconomySubmodule = (
@@ -9,9 +16,22 @@ const buildStateEconomySubmodule = (
 ) =>
     buildModule(`StateEconomy_${stateId}`, (m) => {
         const deployer = m.getAccount(0);
-        const stateDao = m.contract("StateDAO", [[deployer], 30, 50]);
-        const nationalCurrency = m.contract("NationalCurrency", [name, symbol]);
-        const centralBank = m.contract("CentralBank", [stateDao, nationalCurrency, goldAddress]);
+        // const stateDao = m.contract("StateDAO", [[deployer], 30, 50]);
+        // const nationalCurrency = m.contract("NationalCurrency", [name, symbol]);
+        // const centralBank = m.contract("CentralBank", [stateDao, nationalCurrency, goldAddress]);
+
+        // Use CREATE2 for deterministic addresses
+        const stateDao = m.contract("StateDAO", [[deployer], 60, 50], {
+            salt: generateSalt(stateId, "StateDAO")
+        });
+        
+        const nationalCurrency = m.contract("NationalCurrency", [name, symbol], {
+            salt: generateSalt(stateId, "NationalCurrency")
+        });
+        
+        const centralBank = m.contract("CentralBank", [stateDao, nationalCurrency, goldAddress], {
+            salt: generateSalt(stateId, "CentralBank")
+        });
 
         const minterRole = m.staticCall(nationalCurrency, "MINTER_ROLE");
         m.call(nationalCurrency, "grantRole", [minterRole, centralBank]);
