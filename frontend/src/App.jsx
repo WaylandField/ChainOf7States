@@ -22,9 +22,9 @@ const SEVEN_KINGDOMS = {
     name: "秦国",
     currency: { name: "Qin Ban Liang", symbol: "QBL" },
     contracts: {
-      stateDao: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
-      centralBank: "0x68B1D87F95878fE05B998F19b66F4baba5De1aed",
-      currency: "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+      stateDao: "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+      centralBank: "0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE",
+      currency: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
     },
     color: "#8B5CF6", // Purple
   },
@@ -33,9 +33,9 @@ const SEVEN_KINGDOMS = {
     name: "楚国",
     currency: { name: "Ying Yuan", symbol: "CYY" },
     contracts: {
-      stateDao: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0", // TODO: Update after deployment
-      centralBank: "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
-      currency: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      stateDao: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512", // TODO: Update after deployment
+      centralBank: "0x9A676e781A523b5d0C0e43731313A708CB607508",
+      currency: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
     },
     color: "#EF4444", // Red
   },
@@ -44,9 +44,9 @@ const SEVEN_KINGDOMS = {
     name: "齐国",
     currency: { name: "Qi Fahua", symbol: "QFH" },
     contracts: {
-      stateDao: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
-      centralBank: "0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE",
-      currency: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+      stateDao: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+      centralBank: "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
+      currency: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
     },
     color: "#10B981", // Green
   },
@@ -55,9 +55,9 @@ const SEVEN_KINGDOMS = {
     name: "燕国",
     currency: { name: "Yan Ming Dao", symbol: "YMD" },
     contracts: {
-      stateDao: "0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0",
-      centralBank: "0xc6e7DF5E7b4f2A278906862b61205850344D4e7d",
-      currency: "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e",
+      stateDao: "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e",
+      centralBank: "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
+      currency: "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
     },
     color: "#F59E0B", // Yellow
   },
@@ -66,9 +66,9 @@ const SEVEN_KINGDOMS = {
     name: "赵国",
     currency: { name: "Zhao Bu Bi", symbol: "ZBB" },
     contracts: {
-      stateDao: "0x9A676e781A523b5d0C0e43731313A708CB607508",
-      centralBank: "0x59b670e9fA9D0A427751Af201D676719a970857b",
-      currency: "0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82",
+      stateDao: "0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82",
+      centralBank: "0xc6e7DF5E7b4f2A278906862b61205850344D4e7d",
+      currency: "0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0",
     },
     color: "#3B82F6", // Blue
   },
@@ -77,9 +77,9 @@ const SEVEN_KINGDOMS = {
     name: "魏国",
     currency: { name: "Wei Bu Bi", symbol: "WBB" },
     contracts: {
-      stateDao: "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
-      centralBank: "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
-      currency: "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+      stateDao: "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+      centralBank: "0x68B1D87F95878fE05B998F19b66F4baba5De1aed",
+      currency: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
     },
     color: "#F97316", // Orange
   },
@@ -88,9 +88,9 @@ const SEVEN_KINGDOMS = {
     name: "韩国",
     currency: { name: "Han Yuan Jin", symbol: "HYJ" },
     contracts: {
-      stateDao: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      stateDao: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
       centralBank: "0x0B306BF915C4d645ff596e518fAf3F9669b97016",
-      currency: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      currency: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
     },
     color: "#EC4899", // Pink
   },
@@ -534,13 +534,13 @@ function SystemStatusIcon() {
                 }}
               >
                 <span>{contractStatus.stateDao ? "✅" : "❌"}</span>
-                <span style={{ color: "#6b7280" }}>StateDAO</span>
+                <span style={{ color: "#6b7280" }}>StateDAO {currentConfig.contracts.stateDao}</span>
 
                 <span>{contractStatus.centralBank ? "✅" : "❌"}</span>
-                <span style={{ color: "#6b7280" }}>CentralBank</span>
+                <span style={{ color: "#6b7280" }}>CentralBank {currentConfig.contracts.centralBank}</span>
 
                 <span>{contractStatus.currency ? "✅" : "❌"}</span>
-                <span style={{ color: "#6b7280" }}>Currency</span>
+                <span style={{ color: "#6b7280" }}>Currency {currentConfig.contracts.currency}</span>
               </div>
             </div>
           )}
@@ -670,8 +670,8 @@ function AppContent() {
         <main>
           {contractStatus.allDeployed ? (
             <>
-              <StateInfo />
-              <hr style={{ margin: "2rem 0" }} />
+              {/* <StateInfo />
+              <hr style={{ margin: "2rem 0" }} /> */}
               <CreateMintProposal />
               <hr style={{ margin: "2rem 0" }} />
               <ProposalList />
@@ -792,6 +792,7 @@ function BalanceDisplay({ address, label, color = "#374151", size = "1em" }) {
 // 钱包连接组件
 function WalletConnect() {
   const { address, isConnected } = useAccount();
+  const { currentConfig, selectedKingdom } = useKingdom();
   const { connectors, connect } = useConnect();
   const { disconnect } = useDisconnect();
 
@@ -825,7 +826,9 @@ function WalletConnect() {
               marginTop: "0.25rem",
             }}
           >
-            余额: <BalanceDisplay address={address} color="#059669" />
+            余额: <BalanceDisplay address={address} color="#059669" />/
+            <BalanceDisplay address={currentConfig.contracts.stateDao} color="#059669" />/
+            <BalanceDisplay address={currentConfig.contracts.centralBank} color="#059669" />
           </div>
         </div>
       </div>
@@ -907,7 +910,7 @@ function StateInfo() {
           marginBottom: "1rem",
         }}
       >
-        <div
+        {/* <div
           style={{
             padding: "1rem",
             border: `2px solid ${currentConfig.color}40`,
@@ -939,7 +942,7 @@ function StateInfo() {
               {currentConfig.contracts.currency}
             </code>
           </p>
-        </div>
+        </div> */}
 
         <div
           style={{
@@ -1525,7 +1528,7 @@ function ProposalCard({ proposalId }) {
   const now = block ? new Date(Number(block.timestamp) * 1000) : new Date();
   const isExecuted = proposal[8];
   const canVote = now < deadline && !isExecuted;
-  const canExecute = !isExecuted && proposal[6] > proposal[7]; // yesVotes > noVotes
+  const canExecute = !canVote && !isExecuted && proposal[6] > proposal[7]; // yesVotes > noVotes
 
   // 尝试解析提案类型
   const proposalType =
