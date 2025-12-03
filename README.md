@@ -1,3 +1,5 @@
+
+
 ### Core Design Concept
 This system utilizes blockchain technology to simulate the historical era of the Warring States period in China, focusing on the struggle for dominance among the seven powerful states. The project environment encompasses:
 
@@ -17,6 +19,11 @@ This system utilizes blockchain technology to simulate the historical era of the
 *   **`contracts-l1`**: L1 contract service, handling gold and silver currency.
 *   **`contracts-l2-template`**: L2 contract service. The seven states have similar monetary functions and are deployed using the same template.
 *   **`oracle-service`**: Oracle service, includes historical events like weather changes, wars, etc.
+
+
+### Demo
+https://www.loom.com/share/02cd7b65dce34be2b18ba8490584c5f2
+
 
 ### Development Guide
 
