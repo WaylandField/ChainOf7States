@@ -19,7 +19,7 @@ import {
 const SEVEN_KINGDOMS = {
   Qin: {
     id: "Qin",
-    name: "秦国",
+    name: "Qin",
     currency: { name: "Qin Ban Liang", symbol: "QBL" },
     contracts: {
       stateDao: "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
@@ -30,7 +30,7 @@ const SEVEN_KINGDOMS = {
   },
   Chu: {
     id: "Chu",
-    name: "楚国",
+    name: "Chu",
     currency: { name: "Ying Yuan", symbol: "CYY" },
     contracts: {
       stateDao: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512", // TODO: Update after deployment
@@ -41,56 +41,56 @@ const SEVEN_KINGDOMS = {
   },
   Qi: {
     id: "Qi",
-    name: "齐国",
+    name: "Qi",
     currency: { name: "Qi Fahua", symbol: "QFH" },
     contracts: {
-      stateDao: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
-      centralBank: "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
-      currency: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      stateDao: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      centralBank: "0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE",
+      currency: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
     },
     color: "#10B981", // Green
   },
   Yan: {
     id: "Yan",
-    name: "燕国",
+    name: "Yan",
     currency: { name: "Yan Ming Dao", symbol: "YMD" },
     contracts: {
-      stateDao: "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e",
-      centralBank: "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
-      currency: "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
+      stateDao: "0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0",
+      centralBank: "0xc6e7DF5E7b4f2A278906862b61205850344D4e7d",
+      currency: "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e",
     },
     color: "#F59E0B", // Yellow
   },
   Zhao: {
     id: "Zhao",
-    name: "赵国",
+    name: "Zhao",
     currency: { name: "Zhao Bu Bi", symbol: "ZBB" },
     contracts: {
-      stateDao: "0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82",
-      centralBank: "0xc6e7DF5E7b4f2A278906862b61205850344D4e7d",
-      currency: "0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0",
+      stateDao: "0x9A676e781A523b5d0C0e43731313A708CB607508",
+      centralBank: "0x59b670e9fA9D0A427751Af201D676719a970857b",
+      currency: "0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82",
     },
     color: "#3B82F6", // Blue
   },
   Wei: {
     id: "Wei",
-    name: "魏国",
+    name: "Wei",
     currency: { name: "Wei Bu Bi", symbol: "WBB" },
     contracts: {
-      stateDao: "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
-      centralBank: "0x68B1D87F95878fE05B998F19b66F4baba5De1aed",
-      currency: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
+      stateDao: "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
+      centralBank: "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
+      currency: "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
     },
     color: "#F97316", // Orange
   },
   Han: {
     id: "Han",
-    name: "韩国",
+    name: "Han",
     currency: { name: "Han Yuan Jin", symbol: "HYJ" },
     contracts: {
-      stateDao: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
-      centralBank: "0x0B306BF915C4d645ff596e518fAf3F9669b97016",
-      currency: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      stateDao: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      centralBank: "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
+      currency: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
     },
     color: "#EC4899", // Pink
   },
@@ -810,7 +810,7 @@ function WalletConnect() {
         >
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <span>
-              已连接: {`${address.slice(0, 6)}...${address.slice(-4)}`}
+              Connected: {`${address.slice(0, 6)}...${address.slice(-4)}`}
             </span>
             <button
               onClick={() => disconnect()}
@@ -826,7 +826,7 @@ function WalletConnect() {
               marginTop: "0.25rem",
             }}
           >
-            余额: <BalanceDisplay address={address} color="#059669" />/
+            Balance: <BalanceDisplay address={address} color="#059669" />/
             <BalanceDisplay address={currentConfig.contracts.stateDao} color="#059669" />/
             <BalanceDisplay address={currentConfig.contracts.centralBank} color="#059669" />
           </div>
@@ -901,7 +901,7 @@ function StateInfo() {
 
   return (
     <section>
-      <h2 style={{ color: currentConfig.color }}>{currentConfig.name} 状态</h2>
+      <h2 style={{ color: currentConfig.color }}>{currentConfig.name} Status</h2>
       <div
         style={{
           display: "grid",
@@ -953,7 +953,7 @@ function StateInfo() {
           }}
         >
           <h3 style={{ margin: "0 0 0.5rem 0", color: currentConfig.color }}>
-            余额信息 (实时更新)
+            Balance
           </h3>
           <div
             style={{
@@ -972,7 +972,7 @@ function StateInfo() {
                 marginRight: "0.5rem",
               }}
             ></span>
-            <strong>您的钱包余额:</strong>
+            <strong>Balance:</strong>
           </div>
           <p
             style={{
@@ -1006,7 +1006,7 @@ function StateInfo() {
                 marginRight: "0.5rem",
               }}
             ></span>
-            <strong>State Bank余额:</strong>
+            <strong>State Bank Balance:</strong>
           </div>
           <p
             style={{
@@ -1038,7 +1038,7 @@ function StateInfo() {
                 marginRight: "0.5rem",
               }}
             ></span>
-            <strong>Central Bank余额:</strong>
+            <strong>Central Bank Balance:</strong>
           </div>
           <p
             style={{
@@ -1112,7 +1112,7 @@ function CreateMintProposal() {
   if (contractStatus.checking) {
     return (
       <section>
-        <h2>创建铸币提案</h2>
+        <h2>Create Minting Proposal</h2>
         <div
           style={{
             padding: "1rem",
@@ -1133,7 +1133,7 @@ function CreateMintProposal() {
   if (!contractStatus.allDeployed) {
     return (
       <section>
-        <h2>创建铸币提案</h2>
+        <h2>Create Minting Proposal</h2>
         <div
           style={{
             padding: "1rem",
@@ -1163,7 +1163,7 @@ function CreateMintProposal() {
   return (
     <section>
       <h2 style={{ color: currentConfig.color }}>
-        创建{currentConfig.name}铸币提案
+        Create {currentConfig.name} Minting Proposal
       </h2>
 
       {/* Kingdom indicator */}
@@ -1189,7 +1189,7 @@ function CreateMintProposal() {
             fontWeight: "600",
           }}
         >
-          当前国家: {currentConfig.name} | 货币: {currentConfig.currency.symbol}
+          Current kingdom: {currentConfig.name} | Currency: {currentConfig.currency.symbol}
         </span>
       </div>
 
@@ -1218,7 +1218,7 @@ function CreateMintProposal() {
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            placeholder="要铸造的货币数量"
+            placeholder="Minting amount"
             required
             style={{
               width: "100%",
@@ -1247,7 +1247,7 @@ function CreateMintProposal() {
             fontWeight: "600",
           }}
         >
-          {isLoading ? "提交中..." : "提交提案"}
+          {isLoading ? "Submitting..." : "Submit"}
         </button>
       </form>
 
@@ -1260,7 +1260,7 @@ function CreateMintProposal() {
             borderRadius: "6px",
           }}
         >
-          <p style={{ color: "#92400e", margin: 0 }}>⏳ 等待钱包确认...</p>
+          <p style={{ color: "#92400e", margin: 0 }}>⏳ Wait for confirmation...</p>
         </div>
       )}
 
@@ -1274,7 +1274,7 @@ function CreateMintProposal() {
           }}
         >
           <p style={{ color: "#065f46", margin: 0 }}>
-            ✅ 提案创建成功! <br />
+            ✅ Creation Success! <br />
             <small>
               Tx: <code style={{ fontSize: "0.8em" }}>{hash}</code>
             </small>
@@ -1292,7 +1292,7 @@ function CreateMintProposal() {
           }}
         >
           <p style={{ color: "#dc2626", margin: 0 }}>
-            ❌ 提案创建失败: {writeError.message}
+            ❌ Creation Fail: {writeError.message}
           </p>
         </div>
       )}
@@ -1340,7 +1340,7 @@ function ProposalList() {
   if (contractStatus.checking) {
     return (
       <section>
-        <h2>提案列表</h2>
+        <h2>Proposal List</h2>
         <div
           style={{
             padding: "1rem",
@@ -1361,7 +1361,7 @@ function ProposalList() {
   if (!contractStatus.allDeployed) {
     return (
       <section>
-        <h2>提案列表</h2>
+        <h2>Proposal List</h2>
         <div
           style={{
             padding: "1rem",
@@ -1390,7 +1390,7 @@ function ProposalList() {
   if (proposalError) {
     return (
       <section>
-        <h2>提案列表</h2>
+        <h2>Proposal List</h2>
         <div
           style={{
             padding: "1rem",
@@ -1422,7 +1422,7 @@ function ProposalList() {
 
   return (
     <section>
-      <h2>提案列表</h2>
+      <h2>Proposal List</h2>
 
       {/* Status indicator */}
       <div
@@ -1525,7 +1525,7 @@ function ProposalCard({ proposalId }) {
   if (!proposal) return <div>Loading proposal...</div>;
 
   const deadline = new Date(Number(proposal[5]) * 1000);
-  const now = block ? new Date(Number(block.timestamp) * 1000) : new Date();
+  const now = new Date();
   const isExecuted = proposal[8];
   const canVote = now < deadline && !isExecuted;
   const canExecute = !canVote && !isExecuted && proposal[6] > proposal[7]; // yesVotes > noVotes
@@ -1567,7 +1567,7 @@ function ProposalCard({ proposalId }) {
                 color: "#10b981",
               }}
             >
-              ✓ 已执行
+              ✓ Executed
             </span>
           )}
           {executionStatus === "executed" && (
@@ -1578,7 +1578,7 @@ function ProposalCard({ proposalId }) {
                 color: "#f59e0b",
               }}
             >
-              🔄 正在更新...
+              🔄 Updating...
             </span>
           )}
         </h3>
@@ -1594,13 +1594,13 @@ function ProposalCard({ proposalId }) {
       >
         <div>
           <p>
-            <strong>发起人:</strong>{" "}
+            <strong>Creator:</strong>{" "}
             <code style={{ fontSize: "0.8em" }}>
               {proposal[1].slice(0, 10)}...
             </code>
           </p>
           <p>
-            <strong>状态:</strong>
+            <strong>Status:</strong>
             <span
               style={{
                 padding: "0.25rem 0.5rem",
@@ -1621,10 +1621,10 @@ function ProposalCard({ proposalId }) {
         </div>
         <div>
           <p>
-            <strong>投票截止:</strong> {deadline.toLocaleString()}
+            <strong>Voting Deadline:</strong> {deadline.toLocaleString()}
           </p>
           <p>
-            <strong>票数:</strong>
+            <strong>Tickets:</strong>
             <span
               style={{
                 color: "#059669",
@@ -1632,7 +1632,7 @@ function ProposalCard({ proposalId }) {
                 marginLeft: "0.5rem",
               }}
             >
-              {proposal[6].toString()} 同意
+              {proposal[6].toString()} Agree
             </span>{" "}
             /
             <span
@@ -1642,7 +1642,7 @@ function ProposalCard({ proposalId }) {
                 marginLeft: "0.25rem",
               }}
             >
-              {proposal[7].toString()} 反对
+              {proposal[7].toString()} Deny
             </span>
           </p>
         </div>
@@ -1660,10 +1660,10 @@ function ProposalCard({ proposalId }) {
           }}
         >
           <h4 style={{ margin: "0 0 0.5rem 0", color: "#065f46" }}>
-            铸币执行成功 ✓
+            Minting success ✓
           </h4>
           <p style={{ margin: "0", fontSize: "0.9em", color: "#047857" }}>
-            新铸造的货币已转入 State Bank，余额已自动更新
+            New minted corn is transfered to State Bank
           </p>
         </div>
       )}
@@ -1689,7 +1689,7 @@ function ProposalCard({ proposalId }) {
               marginRight: "0.5rem",
             }}
           >
-            同意
+            Agree
           </button>
           <button
             onClick={() =>
@@ -1709,7 +1709,7 @@ function ProposalCard({ proposalId }) {
               cursor: "pointer",
             }}
           >
-            反对
+            Deny
           </button>
         </div>
       )}
@@ -1735,7 +1735,7 @@ function ProposalCard({ proposalId }) {
             fontWeight: "600",
           }}
         >
-          执行提案
+          Execute Proposal
         </button>
       )}
     </div>
@@ -1902,11 +1902,11 @@ function EventLogs() {
 
   return (
     <section>
-      <h2>智能合约执行日志</h2>
+      <h2>Execution Log</h2>
 
       <div style={{ marginBottom: "1rem" }}>
         <label>
-          选择合约:
+          Select contract:
           <select
             value={selectedContract}
             onChange={(e) => setSelectedContract(e.target.value)}
@@ -1919,7 +1919,7 @@ function EventLogs() {
         </label>
 
         <label style={{ marginLeft: "1rem" }}>
-          起始区块:
+          Start Block:
           <input
             type="text"
             value={blockRange.from}
@@ -1932,7 +1932,7 @@ function EventLogs() {
         </label>
 
         <label style={{ marginLeft: "1rem" }}>
-          结束区块:
+          End Block:
           <input
             type="text"
             value={blockRange.to}
@@ -1963,7 +1963,7 @@ function EventLogs() {
       >
         {logs.length === 0 ? (
           <p style={{ padding: "1rem", textAlign: "center", color: "#666" }}>
-            暂无日志数据
+            No Data
           </p>
         ) : (
           logs.map((log, index) => (
@@ -2093,14 +2093,14 @@ function RealTimeEvents() {
 
     switch (eventName) {
       case "ProposalCreated":
-        return `新提案 #${args.id?.toString()}: ${args.description}`;
+        return `New Proposal #${args.id?.toString()}: ${args.description}`;
       case "Voted":
-        return `提案 #${args.proposalId?.toString()} 收到${args.support ? "支持" : "反对"}票`;
+        return `Proposal #${args.proposalId?.toString()} received ${args.support ? "Support" : "Objection"} Ticket`;
       case "ProposalExecuted":
-        return `提案 #${args.proposalId?.toString()} 已执行`;
+        return `Proposal #${args.proposalId?.toString()} is executed`;
       case "Transfer":
         const amount = args.value ? formatUnits(args.value, 18) : "0";
-        return `转账: ${amount} ${currentConfig.currency.symbol} 从 ${args.from?.slice(0, 8)}... 到 ${args.to?.slice(0, 8)}...`;
+        return `Transfer: ${amount} ${currentConfig.currency.symbol} from ${args.from?.slice(0, 8)}... to ${args.to?.slice(0, 8)}...`;
       default:
         return JSON.stringify(args);
     }
@@ -2108,7 +2108,7 @@ function RealTimeEvents() {
 
   return (
     <section>
-      <h2>实时事件监听</h2>
+      <h2>Event Monitoring</h2>
 
       <div style={{ marginBottom: "1rem" }}>
         <button
@@ -2122,7 +2122,7 @@ function RealTimeEvents() {
             cursor: "pointer",
           }}
         >
-          {isMonitoring ? "停止监听" : "开始监听"}
+          {isMonitoring ? "Stop" : "Start"}
         </button>
         <span style={{ marginLeft: "1rem", color: "#666" }}>
           状态: {isMonitoring ? "监听中" : "已停止"}
@@ -2132,7 +2132,7 @@ function RealTimeEvents() {
             onClick={() => setRealtimeLogs([])}
             style={{ marginLeft: "1rem", padding: "0.25rem 0.5rem" }}
           >
-            清空日志
+            clear
           </button>
         )}
       </div>
@@ -2157,7 +2157,7 @@ function RealTimeEvents() {
               fontStyle: "italic",
             }}
           >
-            {isMonitoring ? "等待事件..." : "点击“开始监听”来监听实时事件"}
+            {isMonitoring ? "waiting for events..." : "click to \"start\" to start monitoring."}
           </div>
         ) : (
           realtimeLogs.map((log) => (

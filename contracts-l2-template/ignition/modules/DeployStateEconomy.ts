@@ -21,7 +21,7 @@ const buildStateEconomySubmodule = (
         // const centralBank = m.contract("CentralBank", [stateDao, nationalCurrency, goldAddress]);
 
         // Use CREATE2 for deterministic addresses
-        const stateDao = m.contract("StateDAO", [[deployer], 60, 50], {
+        const stateDao = m.contract("StateDAO", [[deployer], 30, 50], {
             salt: generateSalt(stateId, "StateDAO")
         });
         
